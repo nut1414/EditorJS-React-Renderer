@@ -18,6 +18,7 @@ import parse from 'react-html-parser';
 import classnames from 'classnames';
 import checklistOutputStyle from './style';
 import './style.css';
+import { ErrRendererProps } from '../../err'
 //#endregion
 
 const supportedKeys = ['container', 'item', 'checkbox', 'label'];
@@ -28,7 +29,7 @@ const ChecklistOutput = ({ data, style, classNames, config }: ErrRendererProps) 
   if (!config || typeof config !== 'object') config = { disableDefaultStyle: false };
   if (!classNames || typeof classNames !== 'object') classNames = {};
 
-  supportedKeys.forEach(key => {
+  supportedKeys.forEach((key: any) => {
     if (!style[key] || typeof style[key] !== 'object') style[key] = {};
     if (!classNames[key] || typeof classNames[key] !== 'string') classNames[key] = '';
   });
@@ -38,7 +39,7 @@ const ChecklistOutput = ({ data, style, classNames, config }: ErrRendererProps) 
   const checkboxStyle = config.disableDefaultStyle ? style.checkbox : { ...checklistOutputStyle.checkbox, ...style.checkbox };
   const labelStyle = config.disableDefaultStyle ? style.label : { ...checklistOutputStyle.label, ...style.label };
 
-  let content = [];
+  let content: any = [];
 
   if (typeof data === 'object') {
     if (data.items && Array.isArray(data.items)) content = data.items.map((item, index) =>

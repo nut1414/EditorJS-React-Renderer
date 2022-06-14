@@ -151,54 +151,54 @@ const Output = ({ data, style, classNames, config, renderers }: ErrOutputProps) 
   if (!renderers || typeof renderers !== 'object') renderers = {};
 
   return data.blocks.map((block, i) => {
-    let Renderer = null;
+    let Renderer: any = null;
 
     switch (block.type.toLowerCase()) {
       case 'codebox':
-        Renderer = renderers.codeBox || CodeBoxOutput;
-        return <Renderer key={ i } data={ block.data } style={ style.codeBox || {}} config={ config.codeBox || {}} classNames={ classNames.codeBox || {}} />;
+        Renderer = renderers.codeBox || CodeBoxOutput || (() => <></>);
+        return <Renderer key={ i } data={ block.data } style={ style?.codeBox || {}} config={ config?.codeBox || {}} classNames={ classNames?.codeBox || {}} />;
       case 'header':
-        Renderer = renderers.header || HeaderOutput;
-        return <Renderer key={ i } data={ block.data } style={ style.header || {}} config={ config.header || {}} classNames={ classNames.header || {}} />;
+        Renderer = renderers.header || HeaderOutput || (() => <></>);
+        return <Renderer key={ i } data={ block.data } style={ style?.header || {}} config={ config?.header || {}} classNames={ classNames?.header || {}} />;
       case 'paragraph':
-        Renderer = renderers.paragraph || ParagraphOutput;
-        return <Renderer key={ i } data={ block.data } style={ style.paragraph || {}} config={ config.paragraph || {}}
-          classNames={ classNames.paragraph || {}} />;
+        Renderer = renderers.paragraph || ParagraphOutput || (() => <></>);
+        return <Renderer key={ i } data={ block.data } style={ style?.paragraph || {}} config={ config?.paragraph || {}}
+          classNames={ classNames?.paragraph || {}} />;
       case 'image':
-        Renderer = renderers.image || ImageOutput;
-        return <Renderer key={ i } data={ block.data } style={ style.image || {}} config={ config.image || {}} classNames={ classNames.image || {}} />;
+        Renderer = renderers.image || ImageOutput || (() => <></>);
+        return <Renderer key={ i } data={ block.data } style={ style?.image || {}} config={ config?.image || {}} classNames={ classNames?.image || {}} />;
       case 'video':
-        Renderer = renderers.video || VideoOutput;
-        return <Renderer key={ i } data={ block.data } style={ style.video || {}} config={ config.video || {}} classNames={ classNames.video || {}} />;
+        Renderer = renderers.video || VideoOutput || (() => <></>);
+        return <Renderer key={ i } data={ block.data } style={ style?.video || {}} config={ config?.video || {}} classNames={ classNames?.video || {}} />;
       case 'embed':
-        Renderer = renderers.embed || EmbedOutput;
-        return <Renderer key={ i } data={ block.data } style={ style.embed || {}} config={ config.embed || {}} classNames={ classNames.embed || {}} />;
+        Renderer = renderers.embed || EmbedOutput || (() => <></>);
+        return <Renderer key={ i } data={ block.data } style={ style?.embed || {}} config={ config?.embed || {}} classNames={ classNames?.embed || {}} />;
       case 'table':
-        Renderer = renderers.table || TableOutput;
-        return <Renderer key={ i } data={ block.data } style={ style.table || {}} config={ config.table || {}} classNames={ classNames.table || {}} />;
+        Renderer = renderers.table || TableOutput || (() => <></>);
+        return <Renderer key={ i } data={ block.data } style={ style?.table || {}} config={ config?.table || {}} classNames={ classNames?.table || {}} />;
       case 'list':
-        Renderer = renderers.list || ListOutput;
-        return <Renderer key={ i } data={ block.data } style={ style.list || {}} config={ config.list || {}} classNames={ classNames.list || {}} />;
+        Renderer = renderers.list || ListOutput || (() => <></>);
+        return <Renderer key={ i } data={ block.data } style={ style?.list || {}} config={ config?.list || {}} classNames={ classNames?.list || {}} />;
       case 'checklist':
-        Renderer = renderers.checklist || ChecklistOutput;
-        return <Renderer key={ i } data={ block.data } style={ style.checklist || {}} config={ config.checklist || {}}
-          classNames={ classNames.checklist || {}} />;
+        Renderer = renderers.checklist || ChecklistOutput || (() => <></>);
+        return <Renderer key={ i } data={ block.data } style={ style?.checklist || {}} config={ config?.checklist || {}}
+          classNames={ classNames?.checklist || {}} />;
       case 'quote':
-        Renderer = renderers.quote || QuoteOutput;
-        return <Renderer key={ i } data={ block.data } style={ style.quote || {}} config={ config.quote || {}} classNames={ classNames.quote || {}} />;
+        Renderer = renderers.quote || QuoteOutput || (() => <></>);
+        return <Renderer key={ i } data={ block.data } style={ style?.quote || {}} config={ config?.quote || {}} classNames={ classNames?.quote || {}} />;
       case 'warning':
-        Renderer = renderers.warning || WarningOutput;
-        return <Renderer key={ i } data={ block.data } style={ style.warning || {}} config={ config.warning || {}}
-          classNames={ classNames.warning || {}} />;
+        Renderer = renderers.warning || WarningOutput || (() => <></>);
+        return <Renderer key={ i } data={ block.data } style={ style?.warning || {}} config={ config?.warning || {}}
+          classNames={ classNames?.warning || {}} />;
       case 'linktool':
-        Renderer = renderers.linktool || LinkToolOutput;
-        return <Renderer key={ i } data={ block.data } style={ style.linktool || {}} config={ config.linktool || {}} classNames={ classNames.linktool || {}} />;
+        Renderer = renderers.linktool || LinkToolOutput || (() => <></>);
+        return <Renderer key={ i } data={ block.data } style={ style?.linktool || {}} config={ config?.linktool || {}} classNames={ classNames?.linktool || {}} />;
       case 'personality':
-        Renderer = renderers.personality || PersonalityOutput;
-        return <Renderer key={ i } data={ block.data } style={ style.personality || {}} config={ config.personality || {}} classNames={ classNames.personality || {}} />;
+        Renderer = renderers.personality || PersonalityOutput || (() => <></>);
+        return <Renderer key={ i } data={ block.data } style={ style?.personality || {}} config={ config?.personality || {}} classNames={ classNames?.personality || {}} />;
       case 'delimiter':
-        Renderer = renderers.delimiter || DelimiterOutput;
-        return <Renderer key={ i } style={ style.delimiter || {}} config={ config.delimiter || {}} classNames={ classNames.delimiter || {}} />;
+        Renderer = renderers.delimiter || DelimiterOutput || (() => <></>);
+        return <Renderer key={ i } style={ style?.delimiter || {}} config={ config?.delimiter || {}} classNames={ classNames?.delimiter || {}} />;
 
       default: return <></>;
     }

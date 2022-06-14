@@ -16,6 +16,7 @@
 //#region imports
 import React from 'react';
 import delimiterOutputStyle from './style';
+import { ErrRendererProps } from '../../err'
 //#endregion
 
 const supportedKeys = ['container', 'svg', 'path'];

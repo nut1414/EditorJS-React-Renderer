@@ -17,6 +17,7 @@
 import React from 'react';
 import parse from 'react-html-parser';
 import tableOutputStyle from './style';
+import { ErrRendererProps } from '../../err'
 //#endregion
 
 const supportedKeys = ['table', 'tr', 'th', 'td'];
@@ -37,24 +38,24 @@ const TableOutput = ({ data, style, classNames, config }: ErrRendererProps) => {
   const thStyle = config.disableDefaultStyle ? style.th : { ...tableOutputStyle.th, ...style.th };
   const tdStyle = config.disableDefaultStyle ? style.td : { ...tableOutputStyle.td, ...style.td };
 
-  let content = data.content || [];
+  let content: any = data.content || [];
   if (!Array.isArray(content) || content.length < 1) return '';
 
-  const columnNames = content.shift();
+  const columnNames: any = content.shift();
 
   return <table style={ tableStyle } className={ classNames.table }>
     <thead>
       <tr style={ trStyle } className={ classNames.tr }>
-        { columnNames.map((columnName, index) => <th key={ index } style={ thStyle } className={ classNames.th }>{ parse(columnName) }</th>) }
+        { columnNames.map((columnName: any, index: any) => <th key={ index } style={ thStyle } className={ classNames.th }>{ parse(columnName) }</th>) }
       </tr>
     </thead>
     <tbody>
       {
-        content.map((row, index) => (
+        content.map((row: any, index: any) => (
           <tr key={ index } style={ config.disableDefaultStyle ? trStyle : { backgroundColor: index % 2 === 0 ? 'white' : '#f9f9f9', ...trStyle }} className={ classNames.tr }>
             {
               Array.isArray(row) && row.length > 1 &&
-              row.map((columnValue, i) => <td key={ i } style={ tdStyle } className={ classNames.td }>{ parse(columnValue) }</td>)
+              row.map((columnValue: any, i: any) => <td key={ i } style={ tdStyle } className={ classNames.td }>{ parse(columnValue) }</td>)
             }
           </tr>
         ))

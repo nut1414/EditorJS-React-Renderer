@@ -13,6 +13,7 @@
 import React from 'react';
 import parse from 'react-html-parser';
 import defaultStyle from './style';
+import { ErrRendererProps } from '../../err'
 //#endregion
 
 const supportedKeys = ['container', 'textHolder', 'name', 'description', 'photo', 'link'];

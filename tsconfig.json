@@ -22,7 +22,7 @@
     "outDir": "./dist/"
   },
   "include": [
-    "err.d.ts",
+    "err.ts",
     "**/*.ts",
     "**/*.tsx"
   ],

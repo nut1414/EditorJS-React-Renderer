@@ -16,6 +16,7 @@
 import React from 'react';
 import parse from 'react-html-parser';
 import Quote from './quote/index';
+import { ErrRendererProps } from '../../err'
 //#endregion
 
 const supportedKeys = ['container', 'content', 'author', 'message'];
@@ -42,7 +43,7 @@ const QuoteOutput = ({ data, style, classNames, config }: ErrRendererProps) => {
   }
 
   if (!content) return '';
-  return <Quote author={ parse(caption) } message={ parse(content) } style={ style as any } classNames={ classNames } config={ config } />;
+  return <Quote author={ parse(caption) as any } message={ parse(content) } style={ style as any } classNames={ classNames } config={ config } />;
 };
 
 export default QuoteOutput;

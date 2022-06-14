@@ -16,6 +16,7 @@
 import React from 'react';
 import parse from 'react-html-parser';
 import Warning from './warning/index';
+import { ErrRendererProps } from '../../err'
 //#endregion
 
 const supportedKeys = ['container', 'icon', 'title', 'message'];

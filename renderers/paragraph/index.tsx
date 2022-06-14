@@ -16,6 +16,7 @@
 import React from 'react';
 import parse from 'react-html-parser';
 import paragraphOutputStyle from './style';
+import { ErrRendererProps } from '../../err'
 //#endregion
 
 const ParagraphOutput = ({ data, style, classNames, config }: ErrRendererProps) => {

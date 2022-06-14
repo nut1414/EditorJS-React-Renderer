@@ -14,6 +14,7 @@
 import React from 'react';
 import parse from 'react-html-parser';
 import videoOutputStyle from './style';
+import { ErrRendererProps } from '../../err'
 //#endregion
 
 const supportedKeys = ['video', 'figure', 'figcaption'];

@@ -17,6 +17,7 @@
 import React from 'react';
 import parse from 'react-html-parser';
 import imageOutputStyle from './style';
+import { ErrRendererProps } from '../../err'
 //#endregion
 
 const supportedKeys = ['img', 'figure', 'figcaption'];

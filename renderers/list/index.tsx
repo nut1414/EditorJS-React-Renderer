@@ -16,6 +16,7 @@
 import React from 'react';
 import parse from 'react-html-parser';
 import listOutputStyle from './style';
+import { ErrRendererProps } from '../../err'
 //#endregion
 
 const validListStyles = ['ordered', 'unordered'];
@@ -34,7 +35,7 @@ const ListOutput = ({ data, style, classNames, config }: ErrRendererProps) => {
 
   const containerStyle = config.disableDefaultStyle ? style.container : { ...listOutputStyle.container, ...style.container };
   const listItemStyle = config.disableDefaultStyle ? style.listItem : { ...listOutputStyle.listItem, ...style.listItem };
-  let content = [], listType = 'unordered';
+  let content: any = [], listType: string = 'unordered';
 
   if (typeof data === 'string') content.push(data);
   else if (typeof data === 'object') {

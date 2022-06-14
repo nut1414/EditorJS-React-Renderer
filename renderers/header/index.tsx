@@ -17,6 +17,7 @@
 import React from 'react';
 import parse from 'react-html-parser';
 import headerOutputStyle from './style';
+import { ErrRendererProps } from '../../err'
 //#endregion
 
 const supportedKeys = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];

@@ -15,6 +15,7 @@
 import React from 'react';
 import parse from 'react-html-parser';
 import classnames from 'classnames';
+import { ErrRendererProps } from '../../err'
 
 import codeBoxOutputStyle from './style';
 //#endregion
@@ -22,9 +23,9 @@ import codeBoxOutputStyle from './style';
 class CodeBoxOutput extends React.PureComponent {
   codeAreaRef: any;
   supportedKeys: string[];
-  props: ErrRendererProps;
+  props: ErrRendererProps | any;
 
-  constructor(props){
+  constructor(props: any){
     super(props);
 
     this.codeAreaRef = React.createRef();
@@ -42,8 +43,9 @@ class CodeBoxOutput extends React.PureComponent {
   }
 
   highlightBlock = () => {
-    if (typeof window.hljs !== 'undefined') window.hljs.highlightBlock(this.codeAreaRef.current);
-    else setTimeout(this.highlightBlock, 250);
+    //commented out because unused codeBox
+    //if (typeof window?.hljs !== 'undefined') window?.hljs.highlightBlock(this.codeAreaRef.current);
+    //else setTimeout(this.highlightBlock, 250);
   };
 
   injectHighlightJSScriptElement = () => {
@@ -66,7 +68,7 @@ class CodeBoxOutput extends React.PureComponent {
     }
   };
 
-  injectHighlightJSCSSElement = highlightJSCSSURL => {
+  injectHighlightJSCSSElement = (highlightJSCSSURL: any)=> {
     if (!highlightJSCSSURL || typeof highlightJSCSSURL !== 'string') return;
 
     const highlightJSCSSElements = document.querySelectorAll('link');

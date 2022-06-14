@@ -17,7 +17,7 @@ import React from 'react';
 import quoteStyle from './style';
 //#endregion
 
-const Quote = ({ author='Unknown', message, config, classNames, style: { container, content, message: messageStyle, author: authorStyle }}) => (
+const Quote = ({ author='Unknown', message, config, classNames, style: { container, content, message: messageStyle, author: authorStyle }} : any) => (
   <div style={ config.disableDefaultStyle ? quoteStyle.quoteStyle : { ...quoteStyle.quoteStyle, ...container }} className={ classNames.container }>
     <span style={ config.disableDefaultStyle ? quoteStyle.contentStyle : { ...quoteStyle.contentStyle, ...content }} className={ classNames.content }>
       <p style={ config.disableDefaultStyle ? quoteStyle.messageStyle : { ...quoteStyle.messageStyle, ...messageStyle }} className={ classNames.message }>
