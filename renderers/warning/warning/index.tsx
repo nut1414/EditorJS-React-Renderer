@@ -22,9 +22,9 @@ const Warning = ({ title, message, classNames, customStyle={}, config }: any) =>
     <div style={ containerStyle } className={ classNames.container }>
       <svg style={ iconStyle } className={ classNames.icon } version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink'
         x='0px' y='0px' viewBox='0 0 50 50' xmlSpace='preserve'>
-        <circle style={ warningStyle.circle } cx='25' cy='25' r='25'/>
-        <line style={ warningStyle.line } x1='25' y1='10' x2='25' y2='28'/>
-        <line style={ warningStyle.line } x1='25' y1='37' x2='25' y2='39'/>
+        <circle style={ warningStyle.circle as any } cx='25' cy='25' r='25'/>
+        <line style={ warningStyle.line as any } x1='25' y1='10' x2='25' y2='28'/>
+        <line style={ warningStyle.line as any } x1='25' y1='37' x2='25' y2='39'/>
         <g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
       </svg>
       <p style={ titleStyle } className={ classNames.title }>{ title }:</p>

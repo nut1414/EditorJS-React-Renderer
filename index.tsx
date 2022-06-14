@@ -37,6 +37,112 @@ import LinkToolOutput from './renderers/linkTool/index';
 import PersonalityOutput from './renderers/personality/index';
 //#endregion
 
+  interface Window {
+      hljs: any
+    }
+
+  interface ErrRendererProps {
+    data: ErrGenericData
+    style?: ErrGenericData
+    classNames?: ErrGenericData
+    config?: ErrConfig
+  }
+
+  interface ErrOutputData {
+    blocks: ErrBlock[]
+    time?: number
+    version?: string
+  }
+
+  interface ErrBlock {
+    type: string
+    data: ErrGenericData
+  }
+
+  interface ErrGenericData {
+    [key: string]: any
+  }
+
+  interface ErrOutputProps {
+    data: ErrOutputData
+    style?: ErrOutputStyle
+    classNames?: ErrOutputClassNames
+    config?: ErrOutputConfig
+    renderers: ErrOutputRenderers
+  }
+
+  interface ErrConfig {
+    disableDefaultStyle: boolean
+  }
+
+  interface ErrOutputConfig {
+    checklist?: ErrConfig
+    codeBox?: ErrConfig
+    delimiter?: ErrConfig
+    embed?: ErrConfig
+    header?: ErrConfig
+    image?: ErrConfig
+    list?: ErrConfig
+    paragraph?: ErrConfig
+    quote?: ErrConfig
+    table?: ErrConfig
+    video?: ErrConfig
+    warning?: ErrConfig
+    linktool?: ErrConfig
+    personality?: ErrConfig
+  }
+
+  interface ErrOutputClassNames {
+    checklist?: string
+    codeBox?: string
+    delimiter?: string
+    embed?: string
+    header?: string
+    image?: string
+    list?: string
+    paragraph?: string
+    quote?: string
+    table?: string
+    video?: string
+    warning?: string
+    linktool?: string
+    personality?: string
+  }
+
+  interface ErrOutputStyle {
+    checklist?: ErrGenericData
+    codeBox?: ErrGenericData
+    delimiter?: ErrGenericData
+    embed?: ErrGenericData
+    header?: ErrGenericData
+    image?: ErrGenericData
+    list?: ErrGenericData
+    paragraph?: ErrGenericData
+    quote?: ErrGenericData
+    table?: ErrGenericData
+    video?: ErrGenericData
+    warning?: ErrGenericData
+    linktool?: ErrGenericData
+    personality?: ErrGenericData
+  }
+
+  interface ErrOutputRenderers {
+    checklist?: React.ReactNode
+    codeBox?: React.ReactNode
+    delimiter?: React.ReactNode
+    embed?: React.ReactNode
+    header?: React.ReactNode
+    image?: React.ReactNode
+    list?: React.ReactNode
+    paragraph?: React.ReactNode
+    quote?: React.ReactNode
+    table?: React.ReactNode
+    video?: React.ReactNode
+    warning?: React.ReactNode
+    linktool?: React.ReactNode
+    personality?: React.ReactNode
+  }
+
 const Output = ({ data, style, classNames, config, renderers }: ErrOutputProps) => {
   if (!data || typeof data !== 'object') return '';
   if (!style || typeof style !== 'object') style = {};

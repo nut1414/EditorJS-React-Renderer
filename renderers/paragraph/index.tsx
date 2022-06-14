@@ -30,7 +30,7 @@ const ParagraphOutput = ({ data, style, classNames, config }: ErrRendererProps) 
   if (typeof data === 'string') content = data;
   else if (typeof data === 'object' && data.text && typeof data.text === 'string') content = data.text;
 
-  return content ? <p style={ paragraphStyle } className={ classNames }>{ parse(content) }</p> : '';
+  return content ? <p style={ paragraphStyle } className={ classNames as any }>{ parse(content) }</p> : '';
 };
 
 export default ParagraphOutput;

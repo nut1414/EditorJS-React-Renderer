@@ -43,8 +43,8 @@ const ChecklistOutput = ({ data, style, classNames, config }: ErrRendererProps) 
   if (typeof data === 'object') {
     if (data.items && Array.isArray(data.items)) content = data.items.map((item, index) =>
       <div key={ index } style={ itemStyle } className={ classNames.item }>
-        <input id={ index } style={ checkboxStyle } className={ classNames.checkbox } type='checkbox' checked={ item.checked } readOnly />
-        <label htmlFor={ index } style={ labelStyle } className={ classNames.label }>{ parse(item.text) }</label>
+        <input id={ `${index}` } style={ checkboxStyle } className={ classNames.checkbox } type='checkbox' checked={ item.checked } readOnly />
+        <label htmlFor={ `${index}` } style={ labelStyle } className={ classNames.label }>{ parse(item.text) }</label>
       </div>
     );
   }
