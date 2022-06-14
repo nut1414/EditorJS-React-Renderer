@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
-  // mode: 'development',
-  // devtool: 'source-map',
+ // mode: 'production',
+   mode: 'development',
+   devtool: 'source-map',
   entry: path.normalize(`${__dirname}/index.tsx`),
   output: {
     path: path.normalize(`${__dirname}/dist`),
