@@ -15,7 +15,7 @@
 
 //#region imports
 import React from 'react';
-import parse from 'html-react-parser';
+import parse from 'react-html-parser';
 import headerOutputStyle from './style';
 //#endregion
 

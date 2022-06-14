@@ -12,7 +12,7 @@
 
 //#region imports
 import React from 'react';
-import parse from 'html-react-parser';
+import parse from 'react-html-parser';
 import videoOutputStyle from './style';
 //#endregion
 
